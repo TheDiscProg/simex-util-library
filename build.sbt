@@ -1,7 +1,7 @@
 
 ThisBuild / organization := "thediscprog"
 
-ThisBuild / version := "0.1.0"
+ThisBuild / version := "0.1.1"
 
 lazy val commonSettings = Seq(
   scalaVersion := "2.13.10",
