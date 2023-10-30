@@ -5,7 +5,7 @@ import org.scalatest.matchers.should.Matchers
 
 class PBKDF2HashingServiceTest extends AnyFlatSpec with Matchers {
 
-  private val sut = PBKDF2HashingService()
+  private val sut = HashingService()
 
   it should "generate secure hash for a given string" in {
     val secretString = "secretKey"

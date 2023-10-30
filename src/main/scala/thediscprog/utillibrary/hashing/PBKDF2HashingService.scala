@@ -60,7 +60,3 @@ class PBKDF2HashingService() extends HashingServiceAlgebra {
     }
   }
 }
-
-object PBKDF2HashingService {
-  def apply() = new PBKDF2HashingService()
-}

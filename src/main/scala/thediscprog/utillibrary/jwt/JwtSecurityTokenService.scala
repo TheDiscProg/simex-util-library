@@ -19,7 +19,3 @@ class JwtSecurityTokenService(tokenKey: String) extends SecurityTokenServiceAlge
     JwtCirce.encode(claim, tokenKey, algorithm)
   }
 }
-
-object JwtSecurityTokenService {
-  def apply(secretKey: String): SecurityTokenServiceAlgebra = new JwtSecurityTokenService(secretKey)
-}

@@ -9,7 +9,7 @@ class JwtSecurityTokenServiceTest extends AnyFlatSpec with Matchers {
 
   private val fixedDate = LocalDateTime.of(2023, 6, 13, 12, 0, 0)
   private val fixedInstant = fixedDate.toInstant(ZoneOffset.UTC)
-  private val sut = JwtSecurityTokenService("secretkey")
+  private val sut = SecurityTokenService("secretkey")
 
   it should "generate JWT token" in {
     val result = sut.generateTokenFor("test@test.com", fixedInstant)
