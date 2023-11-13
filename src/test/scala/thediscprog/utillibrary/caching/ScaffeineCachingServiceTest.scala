@@ -2,24 +2,25 @@ package thediscprog.utillibrary.caching
 
 import cats.effect.IO
 import cats.effect.unsafe.implicits.global
-import dapex.messaging.DapexMessage
-import dapex.messaging.Method.{INSERT, SELECT, UPDATE}
-import dapex.test.DapexMessageFixture
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
+import simex.messaging.Datum
+import simex.messaging.Method.{INSERT, SELECT, UPDATE}
+import simex.test.SimexTestFixture
 
 class ScaffeineCachingServiceTest
     extends AnyFlatSpec
     with Matchers
     with ScalaFutures
-    with DapexMessageFixture {
+    with SimexTestFixture {
 
   val sut = CachingService.cachingService[IO]()
 
-  val selectMsg: DapexMessage = getMessage(SELECT)
-  val updateMsg = getMessage(UPDATE)
-  val insertMsg = getMessage(INSERT)
+  val selectMsg = authenticationRequest
+  val updateMsg = getMessage(UPDATE, Some("Person"), Vector(Datum("status", "single", None)))
+  val insertMsg =
+    getMessage(INSERT, Some("Person"), Vector(Datum("status", "married", Some("UPDATE"))))
 
   it should "store items in cache" in {
     val smsg = sut.storeInCache(SELECT.value, selectMsg)

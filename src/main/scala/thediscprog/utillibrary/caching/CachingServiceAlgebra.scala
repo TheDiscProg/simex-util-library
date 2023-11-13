@@ -1,12 +1,12 @@
 package thediscprog.utillibrary.caching
 
-import dapex.messaging.DapexMessage
+import simex.messaging.Simex
 
 trait CachingServiceAlgebra[F[_]] {
 
-  def storeInCache(key: String, value: DapexMessage): F[String]
+  def storeInCache(key: String, value: Simex): F[String]
 
-  def getFromCache(key: String): F[Option[DapexMessage]]
+  def getFromCache(key: String): F[Option[Simex]]
 
   def getAllKeys: F[List[String]]
 

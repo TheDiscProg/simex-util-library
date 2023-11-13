@@ -1,7 +1,6 @@
-
 ThisBuild / organization := "thediscprog"
 
-ThisBuild / version := "0.2.1"
+ThisBuild / version := "0.6.0" /// Keep this in sync with simex-messaging
 
 lazy val commonSettings = Seq(
   scalaVersion := "2.13.10",
@@ -24,5 +23,5 @@ lazy val root = (project in file("."))
 githubOwner :="TheDiscProg"
 githubRepository := "util-library"
 
-addCommandAlias("clntst", ";clean;scalafmt;test:scalafmt;test;")
-addCommandAlias("cvrtst", ";clean;scalafmt;test:scalafmt;coverage;test;coverageReport;")
+addCommandAlias("cleanTest", ";clean;scalafmt;test:scalafmt;test;")
+addCommandAlias("cleanCoverage", ";clean;scalafmt;test:scalafmt;coverage;test;coverageReport;")

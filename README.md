@@ -9,9 +9,9 @@ val cachingService = CachingService.cachingService[F]()
 ```
 It has the following methods defined:
 ```scala
-  def storeInCache(key: String, value: DapexMessage): F[String]
+  def storeInCache(key: String, value: Simex): F[String]
 
-  def getFromCache(key: String): F[Option[DapexMessage]]
+  def getFromCache(key: String): F[Option[Simex]]
 
   def getAllKeys: F[List[String]]
 ```
