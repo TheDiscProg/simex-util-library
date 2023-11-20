@@ -3,7 +3,7 @@ import sbt._
 object Dependencies {
 
   lazy val all = Seq(
-    "simex" %% "simex-messaging" % "0.6.0",
+    "simex" %% "simex-messaging" % "0.7.0",
     "com.github.jwt-scala" %% "jwt-circe" % "9.3.0",
     "dev.profunktor" %% "http4s-jwt-auth" % "1.2.0",
     "org.scalactic" %% "scalactic" % "3.2.15",
