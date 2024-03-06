@@ -8,6 +8,7 @@ import org.scalatest.matchers.should.Matchers
 import simex.messaging.Datum
 import simex.messaging.Method.{INSERT, SELECT, UPDATE}
 import simex.test.SimexTestFixture
+import thediscprog.slogic.Xor
 
 class ScaffeineCachingServiceTest
     extends AnyFlatSpec
@@ -18,9 +19,14 @@ class ScaffeineCachingServiceTest
   val sut = CachingService.cachingService[IO]()
 
   val selectMsg = authenticationRequest
-  val updateMsg = getMessage(UPDATE, Some("Person"), Vector(Datum("status", "single", None)))
+  val updateMsg =
+    getMessage(UPDATE, Some("Person"), Vector(Datum("status", None, Xor.applyLeft("single"))))
   val insertMsg =
-    getMessage(INSERT, Some("Person"), Vector(Datum("status", "married", Some("UPDATE"))))
+    getMessage(
+      INSERT,
+      Some("Person"),
+      Vector(Datum("status", Some("UPDATE"), Xor.applyLeft("married")))
+    )
 
   it should "store items in cache" in {
     val smsg = sut.storeInCache(SELECT.value, selectMsg)
