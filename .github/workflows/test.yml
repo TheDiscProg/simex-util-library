@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - '*'
+env:
+  GITHUB_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 jobs:
   test:
     strategy:
