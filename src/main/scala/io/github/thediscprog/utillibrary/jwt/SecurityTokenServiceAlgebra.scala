@@ -1,7 +1,7 @@
-package thediscprog.utillibrary.jwt
+package io.github.thediscprog.utillibrary.jwt
 
-import thediscprog.utillibrary.jwt.entities.TokenType
-import thediscprog.utillibrary.jwt.entities.TokenType.{AuthorisationToken, RefreshToken}
+import io.github.thediscprog.utillibrary.jwt.entities.TokenType
+import TokenType.{AuthorisationToken, RefreshToken}
 
 import java.time.Instant
 

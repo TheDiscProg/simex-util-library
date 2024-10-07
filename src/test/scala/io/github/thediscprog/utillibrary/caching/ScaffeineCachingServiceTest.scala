@@ -1,14 +1,14 @@
-package thediscprog.utillibrary.caching
+package io.github.thediscprog.utillibrary.caching
 
 import cats.effect.IO
 import cats.effect.unsafe.implicits.global
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import simex.messaging.Datum
-import simex.messaging.Method.{INSERT, SELECT, UPDATE}
-import simex.test.SimexTestFixture
-import thediscprog.slogic.Xor
+import io.github.thediscprog.simexmessaging.messaging.Datum
+import io.github.thediscprog.simexmessaging.messaging.Method.{INSERT, SELECT, UPDATE}
+import io.github.thediscprog.simexmessaging.test.SimexTestFixture
+import io.github.thediscprog.slogic.Xor
 
 class ScaffeineCachingServiceTest
     extends AnyFlatSpec

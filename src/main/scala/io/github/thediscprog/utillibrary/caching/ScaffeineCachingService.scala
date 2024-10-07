@@ -1,9 +1,9 @@
-package thediscprog.utillibrary.caching
+package io.github.thediscprog.utillibrary.caching
 
 import cats.Applicative
 import cats.implicits._
 import com.github.blemale.scaffeine.Cache
-import simex.messaging.Simex
+import io.github.thediscprog.simexmessaging.messaging.Simex
 
 class ScaffeineCachingService[F[_]: Applicative](cache: Cache[String, Simex])
     extends CachingServiceAlgebra[F] {

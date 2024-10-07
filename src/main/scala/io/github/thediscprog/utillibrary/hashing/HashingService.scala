@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.hashing
+package io.github.thediscprog.utillibrary.hashing
 
 object HashingService {
 

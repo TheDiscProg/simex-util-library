@@ -1,14 +1,17 @@
+import sbt.librarymanagement.CrossVersion
+
+lazy val scala2 = "2.13.14"
+lazy val scala3 = "3.5.1"
+lazy val supportedScalaVersions = List(scala2, scala3)
+
 ThisBuild / organization := "thediscprog"
 
-ThisBuild / version := "0.8.0" /// Keep this in sync with simex-messaging
+ThisBuild / version := "0.8.1"
 
 lazy val commonSettings = Seq(
-  scalaVersion := "2.13.10",
+  scalaVersion := scala3,
   libraryDependencies ++= Dependencies.all,
-  addCompilerPlugin(
-    ("org.typelevel" %% "kind-projector" % "0.13.2").cross(CrossVersion.full)
-  ),
-  addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
+  crossScalaVersions := supportedScalaVersions
 )
 
 lazy val root = (project in file("."))
@@ -17,7 +20,22 @@ lazy val root = (project in file("."))
     commonSettings,
     name := "util-library",
     Compile / doc / sources := Seq.empty,
-    scalacOptions ++= Scalac.options
+    scalacOptions ++= Scalac.options,
+    libraryDependencies ++= {
+      if (scalaVersion.value.startsWith("2"))
+        Seq(
+          compilerPlugin(("org.typelevel" %% "kind-projector" % "0.13.3").cross(CrossVersion.full)),
+          compilerPlugin(("com.olegpy" %% "better-monadic-for" % "0.3.1")),
+        )
+      else
+        Seq()
+    },
+    scalacOptions ++= {
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2,13)) => Seq("-Ytasty-reader")
+        case _ => Seq("-Yretain-trees")
+      }
+    }
   )
 
 githubOwner :="TheDiscProg"

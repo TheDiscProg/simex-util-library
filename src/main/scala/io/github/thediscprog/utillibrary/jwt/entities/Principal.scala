@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.jwt.entities
+package io.github.thediscprog.utillibrary.jwt.entities
 
 import io.circe.{Decoder, Encoder}
 import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}

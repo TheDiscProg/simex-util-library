@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.jwt
+package io.github.thediscprog.utillibrary.jwt
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

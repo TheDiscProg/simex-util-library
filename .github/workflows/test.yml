@@ -1,8 +1,8 @@
-name: Publish DAPEX Messaging To GitHub Repo
+name: Run tests
 on:
   push:
     branches:
-      - master
+      - '*'
 env:
   GITHUB_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
 jobs:
@@ -25,5 +25,5 @@ jobs:
       - name: Build and test
         shell: bash
         run: |
-          echo "Running Tests and then publishing"
-          sbt +test +publish
+          echo "Running tests"
+          sbt +test
