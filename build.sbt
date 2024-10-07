@@ -6,7 +6,7 @@ lazy val supportedScalaVersions = List(scala2, scala3)
 
 ThisBuild / organization := "thediscprog"
 
-ThisBuild / version := "0.8.0"
+ThisBuild / version := "0.8.1"
 
 lazy val commonSettings = Seq(
   scalaVersion := scala3,

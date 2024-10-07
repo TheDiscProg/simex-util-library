@@ -24,4 +24,6 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build and test
         shell: bash
-        run: sbt +test +publish
+        run: |
+          echo "Running Tests and then publishing"
+          sbt +test +publish
