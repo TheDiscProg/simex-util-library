@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.jwt.entities
+package io.github.thediscprog.utillibrary.jwt.entities
 
 trait TokenType {
   val name: String

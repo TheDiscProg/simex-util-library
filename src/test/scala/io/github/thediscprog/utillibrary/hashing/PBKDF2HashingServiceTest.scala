@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.hashing
+package io.github.thediscprog.utillibrary.hashing
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

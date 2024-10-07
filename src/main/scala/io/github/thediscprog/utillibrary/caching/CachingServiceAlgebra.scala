@@ -1,6 +1,6 @@
-package thediscprog.utillibrary.caching
+package io.github.thediscprog.utillibrary.caching
 
-import simex.messaging.Simex
+import io.github.thediscprog.simexmessaging.messaging.Simex
 
 trait CachingServiceAlgebra[F[_]] {
 

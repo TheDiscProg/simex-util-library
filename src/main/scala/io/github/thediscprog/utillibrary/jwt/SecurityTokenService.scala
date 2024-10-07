@@ -1,4 +1,4 @@
-package thediscprog.utillibrary.jwt
+package io.github.thediscprog.utillibrary.jwt
 
 object SecurityTokenService {
 

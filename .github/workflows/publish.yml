@@ -1,4 +1,4 @@
-name: Publish DAPEX Messaging
+name: Publish DAPEX Messaging To GitHub Repo
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            java: 17
+            java: 21
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -24,4 +24,4 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build and test
         shell: bash
-        run: sbt test publish
+        run: sbt +test +publish

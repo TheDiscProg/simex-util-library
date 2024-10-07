@@ -1,8 +1,8 @@
-package thediscprog.utillibrary.caching
+package io.github.thediscprog.utillibrary.caching
 
 import cats.Applicative
 import com.github.blemale.scaffeine.Scaffeine
-import simex.messaging.Simex
+import io.github.thediscprog.simexmessaging.messaging.Simex
 
 object CachingService {
 

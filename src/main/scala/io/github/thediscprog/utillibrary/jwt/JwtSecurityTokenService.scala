@@ -1,8 +1,8 @@
-package thediscprog.utillibrary.jwt
+package io.github.thediscprog.utillibrary.jwt
 
 import io.circe.syntax.EncoderOps
+import io.github.thediscprog.utillibrary.jwt.entities.{Principal, TokenType}
 import pdi.jwt.{JwtAlgorithm, JwtCirce, JwtClaim}
-import thediscprog.utillibrary.jwt.entities.{Principal, TokenType}
 
 import java.time.Instant
 
