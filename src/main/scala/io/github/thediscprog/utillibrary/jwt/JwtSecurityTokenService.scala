@@ -27,6 +27,6 @@ class JwtSecurityTokenService(encryptionKey: String) extends SecurityTokenServic
     JwtCirce.encode(claim, encryptionKey, algorithm)
   }
 
-  def decodeJWTToken(jwt: String): Option[JwtClaim] =
+  override def decodeJWTToken(jwt: String): Option[JwtClaim] =
     JwtCirce.decode(jwt, encryptionKey, Seq(algorithm)).toOption
 }

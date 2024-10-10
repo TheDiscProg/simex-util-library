@@ -2,6 +2,7 @@ package io.github.thediscprog.utillibrary.jwt
 
 import io.github.thediscprog.utillibrary.jwt.entities.TokenType
 import TokenType.{AuthorisationToken, RefreshToken}
+import pdi.jwt.JwtClaim
 
 import java.time.Instant
 
@@ -19,5 +20,7 @@ trait SecurityTokenServiceAlgebra {
       issuedAt: Instant,
       expiration: Option[Instant] = None
   ): String
+
+  def decodeJWTToken(jwt: String): Option[JwtClaim]
 
 }

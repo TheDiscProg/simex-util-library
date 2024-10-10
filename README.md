@@ -1,7 +1,10 @@
-# util-library
-Standard utilities that are shared across multiple projects.
+# simex-util-library
+Uses `simex-messaging version 0.9.1`
+
+This library provides a number of useful functions that are used across services, as described below.
 
 ## Local Caching Service
+A local caching service for storing SIMEX messages. It uses Scaffeine by default.
 To create a local caching service:
 
 ```scala
@@ -16,7 +19,10 @@ It has the following methods defined:
   def getAllKeys: F[List[String]]
 ```
 
+If you wanted to use a different caching service, you can by extending and implementing `CachingServiceAlgebra`.
+
 ## Hashing Service
+
 To create a hashing service:
 ```scala
 val hasingService = HashingService()
@@ -29,7 +35,9 @@ It creates a service that, for now uses `PBKDF2WithHmacSHA1/SHA1PRNG` algorithm.
   def validateHash(secret: String, hash: String): Boolean
 ```
 
-## JWT Secure Token Service
+## Secure Token Service
+A secure token service for generating authorisation and refresh security tokens. 
+
 Use the following to create an instance for generating token service:
 
 ```scala
