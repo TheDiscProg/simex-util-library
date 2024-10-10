@@ -1,8 +1,8 @@
-name: Publish DAPEX Messaging To GitHub Repo
+name: Publish Simex Utility Library to Maven
 on:
   push:
-    branches:
-      - master
+    tags:
+      - '*'
 env:
   GITHUB_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
   SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
