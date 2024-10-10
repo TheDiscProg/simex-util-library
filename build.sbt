@@ -36,6 +36,7 @@ lazy val root = (project in file("."))
     }
   )
 
+ThisBuild / version := "0.9.3"
 ThisBuild / organization := "io.github.thediscprog"
 ThisBuild / organizationName := "thediscprog"
 ThisBuild / organizationHomepage := Some(url("https://github.com/TheDiscProg"))
