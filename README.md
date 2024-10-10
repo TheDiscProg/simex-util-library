@@ -1,5 +1,5 @@
 # simex-util-library
-Uses `simex-messaging version 0.9.1`
+Uses `simex-messaging version 0.9.2`
 
 This library provides a number of useful functions that are used across services, as described below.
 
