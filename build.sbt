@@ -6,10 +6,6 @@ lazy val scala2 = "2.13.14"
 lazy val scala3 = "3.5.1"
 lazy val supportedScalaVersions = List(scala2, scala3)
 
-ThisBuild / organization := "thediscprog"
-
-ThisBuild / version := "0.9.1"
-
 lazy val commonSettings = Seq(
   scalaVersion := scala3,
   libraryDependencies ++= Dependencies.all,
@@ -40,7 +36,7 @@ lazy val root = (project in file("."))
     }
   )
 
-ThisBuild / version := "0.9.1"
+ThisBuild / version := "0.9.2"
 ThisBuild / organization := "io.github.thediscprog"
 ThisBuild / organizationName := "thediscprog"
 ThisBuild / organizationHomepage := Some(url("https://github.com/TheDiscProg"))
@@ -53,12 +49,12 @@ ThisBuild / sonatypeCredentialHost := sonatypeCentralHost
 ThisBuild / publishTo := sonatypePublishToBundle.value
 ThisBuild / sonatypeProfileName := "io.github.thediscprog"
 ThisBuild / licenses := List("GNU-3.0" -> url("https://www.gnu.org/licenses/gpl-3.0.en.html"))
-ThisBuild / homepage := Some(url("https://github.com/TheDiscProg/simex-messaging"))
-ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("TheDiscProg", "simex-messaging", "TheDiscProg@gmail.com"))
+ThisBuild / homepage := Some(url("https://github.com/TheDiscProg/simex-util-library"))
+ThisBuild / sonatypeProjectHosting := Some(GitHubHosting("TheDiscProg", "simex-util-library", "TheDiscProg@gmail.com"))
 ThisBuild / scmInfo := Some(
   ScmInfo(
-    url("https://github.com/TheDiscProg/simex-messaging"),
-    "scm:git@github.com:thediscprog/simex-messaging.git"
+    url("https://github.com/TheDiscProg/simex-util-library"),
+    "scm:git@github.com:thediscprog/simex-util-library.git"
   )
 )
 
